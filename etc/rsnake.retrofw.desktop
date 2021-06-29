@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=RSnake
+Type=Application
+Exec=rsnake.sh
+Icon=rsnake
+Comment=Snake game made with PyGame
+Terminal=false
+Categories=games;
