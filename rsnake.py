@@ -10,6 +10,7 @@ class Colors:
     BLACK = (0, 0, 0)
     RED = (229, 37, 33)
     GREEN = (49, 162, 61)
+    DARK_GREEN = (41, 137, 51)
     BLUE = (4, 156, 216)
     BROWN = (243, 211, 138)
     OLIVE = (128, 128, 0)
@@ -54,8 +55,9 @@ def draw_menu(score):
 
 
 def draw_snake(snake_block, snake_parts):
-    for part in snake_parts:
-        pygame.draw.rect(display, Colors.GREEN, [part[0], part[1], snake_block, snake_block])
+    for index, part in enumerate(snake_parts):
+        color = Colors.DARK_GREEN if index == len(snake_parts) - 1 else Colors.GREEN
+        pygame.draw.rect(display, color, [part[0], part[1], snake_block, snake_block])
 
 
 def message(text, color):
