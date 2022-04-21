@@ -110,7 +110,7 @@ def main_loop():
                         game_over = True
                         close_game = False
                     if event.key == pygame.K_LSHIFT:  # Y
-                        main_loop()
+                        return True
 
         # Main event I/O handling.
         for event in pygame.event.get():
@@ -186,8 +186,10 @@ def main_loop():
 
         clock.tick(snake_speed)
 
-    pygame.quit()
-    quit()
+    return False
 
 
-main_loop()
+while True:
+    if not main_loop():
+        pygame.quit()
+        quit()
