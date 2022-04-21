@@ -189,7 +189,9 @@ def main_loop():
     return False
 
 
-while True:
-    if not main_loop():
-        pygame.quit()
-        quit()
+keep_running = True
+while keep_running:
+    keep_running = main_loop()
+
+pygame.quit()
+quit()
